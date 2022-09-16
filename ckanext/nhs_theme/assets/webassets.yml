@@ -1,0 +1,14 @@
+# nhs_theme-js:
+#   filter: rjsmin
+#   output: ckanext-nhs_theme/%(version)s-nhs_theme.js
+#   contents:
+#     - js/nhs_theme.js
+#   extra:
+#     preload:
+#       - base/main
+
+# nhs_theme-css:
+#   filter: cssrewrite
+#   output: ckanext-nhs_theme/%(version)s-nhs_theme.css
+#   contents:
+#     - css/nhs_theme.css
