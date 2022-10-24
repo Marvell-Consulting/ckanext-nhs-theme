@@ -1,0 +1,36 @@
+{#
+Displays a single of dataset.
+
+package        - A package to display.
+item_class     - The class name to use on the list item.
+hide_resources - If true hides the resources (default: false).
+banner         - If true displays a popular banner (default: false).
+truncate       - The length to trucate the description to (default: 180)
+truncate_title - The length to truncate the title to (default: 80).
+
+Example:
+
+  {% snippet 'snippets/package_item.html', package=c.datasets[0] %}
+
+#}
+
+{% ckan_extends %} 
+
+{% set description = package.description or package.notes %}
+{% set published = package.is_published_standard %}
+
+{% block notes %}
+  {% if notes %}
+    <div>{{ notes|urlize }}</div>
+  {% elif description %}
+  <p>{{description}}</p>
+  {% else %}
+    <p class="empty">{{ _("This dataset has no description") }}</p>
+  {% endif %}
+  {% if published %}
+    <p class="tag nhs--tag">{{ _("Published Standard") }}</p>
+  {% else %}
+  <p class="tag nhs--tag green">{{ _("Future Standard") }}</p>
+  {% endif %}
+{% endblock %}
+

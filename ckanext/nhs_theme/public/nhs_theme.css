@@ -1,0 +1,10 @@
+.nhs--tag {
+  color: white;
+  background-color: #1b596c;
+  border-color: transparent;
+  box-shadow: 0 1px 0 darkblue;
+} 
+.nhs--tag.green {
+  background-color: #1c6c20;
+  box-shadow: 0 1px 0 #1c491c;
+}
